@@ -1,8 +1,8 @@
 # Demo sistema de pedidos
 
 ## BackEnd - Java 8 con Spring Boot 2.6.0
-##FrontdEnd - Angular 13
-##Base de Datos - MySql 5.6.37
+## FrontdEnd - Angular 13
+## Base de Datos - MySql 5.6.37
 
 ```sql
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;

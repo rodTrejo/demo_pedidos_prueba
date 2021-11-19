@@ -1,0 +1,54 @@
+<div class="container">
+
+    <div class="row">
+        <h1>Pedidos Realizados</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+
+
+            <button class="btn btn-primary" 
+            (click)="agregar()"
+            type="button">Agregar Pedido</button>
+            
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <table class="table table-light">
+                <thead>
+                    <th scope="col" >#</th>
+                    <th scope="col" >Ticket</th>
+                    <th scope="col" >Cliente</th>
+                    <th scope="col" >Dirección</th>
+                    <th scope="col" >Fecha</th>
+                    <th scope="col" >Total</th>
+                    <th scope="col" >Detalle</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let pedido of pedidos">
+                        <td scope="row">{{pedido.idPedido}}</td>
+                        <td scope="row">{{pedido.ticket}}</td>
+                        <td scope="row">{{pedido.nombreCliente}}</td>
+                        <td scope="row">{{pedido.direccionCliente}}</td>
+                        <td scope="row">{{pedido.fechaCompra | date:"dd-MM-yyyy"}}</td>
+                        <td scope="row">{{pedido.total}}</td>
+                        <td scope="row">
+                            <ul *ngFor="let detalle of pedido.detalleList">
+                                <li>Articulo: {{detalle.nombreArticulo}}</li>
+                                <li>Codigo: {{detalle.codigo}}</li>
+                                <li>Precio: {{detalle.precio}}</li>
+                                <li>Articulo: {{detalle.nombreArticulo}}</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+    
+</div>

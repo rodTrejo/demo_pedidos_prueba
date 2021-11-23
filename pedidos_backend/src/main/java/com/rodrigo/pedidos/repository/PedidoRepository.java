@@ -14,7 +14,7 @@ import com.rodrigo.pedidos.entity.Pedido;
 public interface PedidoRepository extends JpaRepository<Pedido, Serializable> {
 	
 	
-	@Query(value="select * from Pedido p left join Detalle d on p.id_pedido=d.pedido_id_pedido where p.ticket = :ticket ", nativeQuery = true)
+	@Query("FROM Pedido p where p.ticket = :ticket ")
 	public List<Pedido> getPedidoByTicket(@Param("ticket") String ticket);
 
 }
